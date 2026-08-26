@@ -1,3 +1,6 @@
+
+
+
 # RAG AGENT
 
 A reliable, multi-turn AI customer support agent built for **Aster & Row** (a fictional ecommerce brand selling bags, drinkware, and travel accessories). The system orchestrates document retrieval over policy knowledge bases and deterministic order lookups using **LangGraph**, **Qdrant**, **Cohere Reranker**, **Groq**, **FastAPI**, and **Streamlit**.
@@ -6,14 +9,7 @@ A reliable, multi-turn AI customer support agent built for **Aster & Row** (a fi
 
 ## 📺 Demonstration
 
-[![Aria Agent Demo](https://img.shields.io/badge/Demo-Watch%20Video%20%2F%20GIF-blue?style=for-the-badge&logo=youtube)](./demo.mp4)
-
-*Demo walk-through highlights:*
-- **0:00 - 0:45**: Knowledge-Base policy question with source citations & grounding.
-- **0:45 - 1:20**: Order lookup with PII stripping, status checking, and tracking details.
-- **1:20 - 2:00**: Multi-turn conversation maintaining thread memory across questions.
-- **2:00 - 2:40**: Out-of-bounds / ambiguous request where agent refuses to guess and recommends human handoff.
-- **2:40 - 3:30**: Evaluation test suite execution & category breakdown.
+https://github.com/user-attachments/assets/9c742f6f-11aa-43e4-9d39-2438b62ad654
 
 ---
 
@@ -131,7 +127,7 @@ Access the chat UI at `http://localhost:8501`.
 
 ## 🧪 Evaluation
 
-> **Note / Apology:** I did not add the automated evaluation suite due to the time limit. All test cases in `evaluation/visible-cases.json` can be tested manually through the Streamlit UI or the FastAPI `/chat` endpoint.
+> **Note / Apology:**  I did not add the automated evaluation suite . All test cases in `evaluation/visible-cases.json` can be tested manually through the Streamlit UI or the FastAPI `/chat` endpoint.
 
 ---
 
