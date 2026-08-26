@@ -176,7 +176,3 @@ Access the chat UI at `http://localhost:8501`.
   - *Why it was wrong:* It broke LangGraph's conditional routing edge, causing all queries to default to the RAG retrieval node.
   - *Correction:* Replaced it with a strict `PydanticOutputParser` enforcing `Literal["RAG_node", "order_lookup_tool_node"]`.
 
----
-
-## 📄 License
-This repository is authored for the Aster & Row Take-Home Assessment.
