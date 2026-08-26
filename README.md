@@ -157,23 +157,20 @@ Access the chat UI at `http://localhost:8501`.
 
 ---
 
-## ⚠️ Known Limitations & Future Improvements
+## Known Limitations & Future Improvements
 
 1. **Document Conflict Resolution:**
    - *Limitation:* Contradictory documents (e.g. current vs legacy returns policies) can both be retrieved if semantically similar.
    - *Production Improvement:* Implement metadata-based filtering to prioritize active documents (`status: active`) and deprecate superseded docs (`status: legacy`).
-2. **Rate-Limit Resilience:**
-   - *Limitation:* Free-tier LLM endpoints (Groq TPM limits) can hit 429 errors during rapid batch evaluations.
-   - *Production Improvement:* Introduce exponential backoff retries with Redis-backed token bucket rate-limiting and enterprise LLM pooling.
-3. **Transactional Action Execution:**
-   - *Limitation:* Agent is read-only and directs users to human support for cancellations or address changes.
-   - *Production Improvement:* Integrate secure OAuth-scoped tools for initiating returns or address updates within authorized time windows.
-
+2. **Context Bloat:**
+   - Retrieving documents for multiple sub-queries floods the LLM context window, causing "Lost in the Middle" hallucinations. 
 ---
 
-## 🤖 AI Assistance Disclosure
+## AI Assistance Disclosure
 
-- **AI Tools Used:** Antigravity AI (Google DeepMind) for architectural scaffolding, LangGraph state graph wiring, prompt guardrail drafting, and evaluation harness design.
+- **AI Tools Used:**
+- Codex AI 
+- Antigravity AI (Google DeepMind) for architectural scaffolding, LangGraph state graph wiring, prompt guardrail drafting, and evaluation harness design.
 - **Example of an Incorrect AI Suggestion:**
   - *The Mistake:* An early AI-generated prompt suggested having the Router LLM return JSON containing the full order query string rather than classifying the target graph node enum.
   - *Why it was wrong:* It broke LangGraph's conditional routing edge, causing all queries to default to the RAG retrieval node.
