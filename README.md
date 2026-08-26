@@ -1,4 +1,4 @@
-# 🌟 Aria — Aster & Row AI Customer Support Agent
+# RAG AGENT
 
 A reliable, multi-turn AI customer support agent built for **Aster & Row** (a fictional ecommerce brand selling bags, drinkware, and travel accessories). The system orchestrates document retrieval over policy knowledge bases and deterministic order lookups using **LangGraph**, **Qdrant**, **Cohere Reranker**, **Groq**, **FastAPI**, and **Streamlit**.
 
