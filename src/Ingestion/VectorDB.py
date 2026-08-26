@@ -7,7 +7,10 @@ embeddings = HuggingFaceEndpointEmbeddings(
     model="BAAI/bge-m3"
 )
 
-client = QdrantClient(path="qdrant.db")
+import os
+
+client = QdrantClient(location=":memory:") if os.getenv("QDRANT_EVAL_MODE") else QdrantClient(path="qdrant.db")
+
 
 
 def create_vector_store(collection_name):

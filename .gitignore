@@ -14,3 +14,11 @@ wheels/
 
 # Local vector database
 qdrant.db/
+
+# Logs
+logs/
+*.log
+
+# Evaluation outputs / scratch
+evaluation/eval_output.txt
+evaluation/results.json
