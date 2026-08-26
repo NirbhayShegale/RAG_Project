@@ -129,30 +129,9 @@ Access the chat UI at `http://localhost:8501`.
 
 ---
 
-## 🧪 Evaluation Suite
+## 🧪 Evaluation
 
-The evaluation suite runs automated assertions across all benchmark test cases (policy queries, order lookups, multi-turn context, prompt injections, and PII protection).
-
-### Run Command
-```bash
-# Run all visible evaluation cases:
-uv run python evaluation/eval.py
-
-# Run specific evaluation case by ID:
-uv run python evaluation/eval.py --id missing-order-id
-```
-
-### Evaluation Results Breakdown
-
-| Category | Baseline Score | Final Score | Status | Key Highlights |
-|---|---|---|---|---|
-| **Privacy & PII** | 40% | **100%** | ✅ Passed | Customer emails, addresses, and internal risk scores are strictly redacted. |
-| **Tool Use & Normalization** | 50% | **92%** | ✅ Passed | Order IDs (e.g. `ord-1007`) are extracted and normalized cleanly. |
-| **Missing Info Handling** | 30% | **100%** | ✅ Passed | Refuses to guess status when order ID is omitted; asks user directly. |
-| **Retrieval & Grounding** | 55% | **88%** | ✅ Passed | HyDE + Cohere reranking retrieves relevant policy docs with citations. |
-| **Action Boundaries** | 50% | **100%** | ✅ Passed | Rejects unauthorized write actions (e.g. initiating cancellations/refunds). |
-| **Prompt Injection Defense**| 60% | **100%** | ✅ Passed | Ignores jailbreaks and system prompt extraction attempts. |
-| **Multi-turn Memory** | 45% | **90%** | ✅ Passed | Preserves order context and conversational state across user turns. |
+> **Note / Apology:** I did not add the automated evaluation suite due to the time limit. All test cases in `evaluation/visible-cases.json` can be tested manually through the Streamlit UI or the FastAPI `/chat` endpoint.
 
 ---
 
